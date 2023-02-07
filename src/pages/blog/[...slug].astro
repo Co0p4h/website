@@ -10,13 +10,14 @@ interface Props {
 export async function getStaticPaths() {
   const all_posts = await getCollection('blog');
   return all_posts.map(blog_post => ({
-    params: { slug: blog_post.slug }, props:  blog_post ,
+    params: { slug: blog_post.slug }, props: blog_post,
     // params: { slug: blog_post.slug }, props:  { blog_post },
   }));
 }
-// 2. When it's time to render, you can get the blog post directly from the prop
+
 const blog_post = Astro.props;
 // const {blog_post} = Astro.props;
+
 const { Content } = await blog_post.render();
 ---
 <!-- <BlogPostLayout frontmatter={blog_post.data}> -->

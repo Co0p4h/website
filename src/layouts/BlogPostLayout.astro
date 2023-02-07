@@ -5,6 +5,7 @@ import BaseLayout from "./BaseLayout.astro";
 // interface Props {
 //   frontmatter: CollectionEntry<'blog'>['data'];
 // }
+type Props = CollectionEntry<'blog'>['data'];
 
 const { title, author, pubDate, description, image } = Astro.props;
 ---

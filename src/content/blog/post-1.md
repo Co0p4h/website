@@ -6,7 +6,7 @@ author: "coopa"
 image:
     src: "/computer-guy.gif"
     alt: "computer-guy-xd"
-tags: ["test"]
+tags: ["test", "test_tag"]
 ---
 
 # ようこそ僕のブログへ
