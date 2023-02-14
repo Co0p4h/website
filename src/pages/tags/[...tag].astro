@@ -1,7 +1,5 @@
 ---
-import { log } from "astro/dist/core/logger/core";
 import { CollectionEntry, getCollection } from "astro:content";
-import BlogPost from "../../components/BlogPost.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 
 interface Props {
@@ -35,7 +33,7 @@ const { posts } = Astro.props;
         posts.map((post) => (
           // this works, but I don't like it.
           // why does {post.url} not work anymore
-          <BlogPost url={`/blog/${post.slug}`} title={post.data.title} />
+          <li><a href={`/blog/${post.slug}`}>{post.data.title}</a></li>
         ))
       }
     </ul>

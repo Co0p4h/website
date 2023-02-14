@@ -18,10 +18,38 @@ const { pageTitle } = Astro.props;
   </head>
   <body>
     <Header />
-    <slot />
+    <div>
+      <slot />
+    </div>
     <Footer />
     <script>
       import "../scripts/menu.js";
     </script>
   </body>
 </html>
+
+<style>
+  body {
+    min-height: 100vh;
+    padding: 0;
+    margin: 0;
+    /* background-color: rgb(204, 230, 230); */
+    /* position: relative; */
+    display: flex;
+    flex-direction: column;
+  }
+
+  div {
+    flex: 1;
+    /* background-color: rgb(99, 99, 123); */
+    /* max-width: 60vw; */
+    /* height: auto; */
+    /* width: 500px; */
+    /* margin: 2rem; */
+    margin: 0rem 10% 4rem;
+    padding: 0rem 2rem 4rem;
+    /* margin: 0rem 2.5rem 4rem; */
+    /* margin-left: auto; */
+    /* margin-right: auto; */
+  }
+</style>
