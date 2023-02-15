@@ -1,5 +1,5 @@
 ---
-title: "My First test blog"
+title: "My First test writin"
 pubDate: 2023-02-05
 description: "first test"
 author: "coopa"

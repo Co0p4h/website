@@ -1,7 +1,7 @@
 ---
-title: 2nd blog test
+title: 2nd wtest
 pubDate: 2023-02-05
-description: "just testing blog"
+description: "just testing files"
 author: coopa
 image:
     src: "https://safebooru.org//images/4067/12eee082fb63f6aca35a022766b7d194.gif?4249745"
@@ -9,9 +9,9 @@ image:
 tags: ["test"]
 ---
 
-### blog 2 test
+### 2 test
 
-i am just testing this, this si not realy blog
+i am just testing this, this si not realy writing
 
 要表真レ故 2 想特こクイぱ必済ひなっと欠山空ー入本リ米断ヨキス動暮ざ打容スやゆフ。演庫載れゃや目 8 間モノ状夫つむち読税トツフレ待版カシ作帰スヒヨ和実持ルふ性誓テ聞県ヒナタエ亀 6 費ふるえら善屋アハ日終世まにわせ最真際えひげぶ。落タヒチヱ現円えますら評 21 済ノオヘ電外フニメソ力宅びさば手回ワミラ観島イるくも郵 17 情ッそ大講リ就官レらこ明打外ー警宅喚宴嶺びぐ。
 
