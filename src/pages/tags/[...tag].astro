@@ -33,7 +33,7 @@ const { posts } = Astro.props;
         posts.map((post) => (
           // this works, but I don't like it.
           // why does {post.url} not work anymore
-          <li><a href={`/blog/${post.slug}`}>{post.data.title}</a></li>
+          <li><a href={`/writing/${post.slug}`}>{post.data.title}</a></li>
         ))
       }
     </ul>

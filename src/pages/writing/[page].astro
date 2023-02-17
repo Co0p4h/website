@@ -1,0 +1,26 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+export async function getStaticPaths({ paginate }) {
+    const pages = await getCollection('blog');
+    return paginate(pages, { pageSize: 2 });
+}
+
+// All paginated data is passed on the "page" prop
+const { page } = Astro.props;
+---
+
+<!-- Display the current page number. Astro.params.page can also be used! -->
+<BaseLayout>
+    <h1>Page {page.currentPage}</h1>
+    <ul>
+        {page.data.map((content) => 
+            <li>
+                <a href={content.slug}>{content.data.title}</a>
+            </li>
+        )}
+    </ul>
+    {page.url.prev ? <a href={page.url.prev}>Previous</a> : null}
+    {page.url.next ? <a href={page.url.next}>Next</a> : null}
+</BaseLayout>

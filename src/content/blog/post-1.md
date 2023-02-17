@@ -5,10 +5,10 @@ description: "first test"
 author: "coopa"
 image:
     src: "/computer-guy.gif"
-    alt: "computer-guy-xd"
+    alt: "computer-guy"
 tags: ["test", "test_tag"]
 ---
 
-# ようこそ僕のブログへ
+## ようこそ僕のブログへ
 
 これを翻訳すればアホだな。

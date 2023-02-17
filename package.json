@@ -13,6 +13,7 @@
     "dependencies": {
         "@astrojs/mdx": "^0.16.0",
         "@astrojs/sitemap": "^1.0.1",
+        "@fontsource/source-code-pro": "^4.5.14",
         "astro": "^2.0.6"
     }
 }

@@ -9,25 +9,21 @@ type Props = CollectionEntry<'blog'>['data'];
 
 const { title, author, pubDate, description, image } = Astro.props;
 ---
-<!-- <BaseLayout pageTitle={frontmatter.title}> -->
 <BaseLayout pageTitle={title}>
     <h1>{title}</h1>
     <p>author: {author}</p>
     <p>publish date: {pubDate.toLocaleDateString("en-uk")}</p>
     <p>description: <em>{description}</em></p>
-    <img src={image?.src} width="300" alt={image?.alt} />
-    <slot />
+    <img src={image?.src} width="300" alt={image?.alt} style="max-width: 100%; height: auto;"/>
+    <div>
+        <slot />
+    </div>
 </BaseLayout>
 
+<!-- <style>
+    div { 
+        text-align: center;
+        color: red;
+    }
+</style> -->
 
-
-<!-- // const { frontmatter } = Astro.props; -->
-
-<!-- <BaseLayout pageTitle={frontmatter.title}> 
-    {frontmatter.author}
-    <p>{frontmatter.pubDate.toLocaleDateString("en-uk")}</p>
-    <p><em>{frontmatter.description}</em></p>
-    <p>Written by: {frontmatter.author}</p>
-    <img src={frontmatter.image?.src} width="300" alt={frontmatter.image?.alt} />
-    <slot />
-</BaseLayout> -->

@@ -6,7 +6,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 // const allPosts = await Astro.glob('../pages/posts/*.md');
 const all_posts = await getCollection('blog');
 
-const pageTitle = "thoughts";
+const pageTitle = "writing";
 ---
 <BaseLayout pageTitle={pageTitle}>
     <h2>this si msy writ eing</h2>
@@ -14,7 +14,10 @@ const pageTitle = "thoughts";
         {all_posts.map(post => (
             <li>
                 <a href={post.slug}>{post.data.title}</a>
+                {/* <img src={post.data.image?.src} alt={post.data.image?.alt} style="max-width: 100%; height: auto;">*/}
             </li>
         ))}
     </ul>
+    <a href="1">more</a>
 </BaseLayout>
+
