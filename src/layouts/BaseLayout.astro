@@ -13,7 +13,7 @@ const { pageTitle } = Astro.props;
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon_io_2/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon_io_2/favicon-16x16.png">
     <link rel="manifest" href="/favicon_io_2/site.webmanifest">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <meta name="generator" content={Astro.generator} />
     <title>coopa | {pageTitle}</title>
   </head>
@@ -23,36 +23,30 @@ const { pageTitle } = Astro.props;
       <slot />
     </div>
     <Footer />
-    <script>
-      import "../scripts/menu.js";
-    </script>
   </body>
 </html>
 
 <style>
   body {
     font-family: "Source Code Pro";
-    min-height: 100vh;
+    min-height: 100svh;
     padding: 0;
     margin: 0;
-    /* background-color: rgb(204, 230, 230); */
+    background-color: rgb(204, 230, 230);
     position: relative;
     display: flex;
     flex-direction: column;
+    /* -webkit-text-size-adjust: 100%; */
+
+    /* width: 100%; */
   }
 
+  /* main body content style */
   div {
+    /* width: 100%; */
     flex: 1;
-    /* background-color: rgb(99, 99, 123); */
-    /* max-width: 60vw; */
-    /* height: auto; */
-    /* width: 500px; */
-    /* margin: 2rem; */
-    margin: 0rem 10% 2rem;
-    padding: 0rem 2rem 2rem;
-    /* margin: 0rem 2.5rem 4rem; */
-    /* margin-left: auto; */
-    /* margin-right: auto; */
-    /* font-family: 'Times New Roman', Times, serif; */
+    margin: 0 auto;
+    padding: 0 2rem;
+    max-width: 40rem;
   }
 </style>

@@ -1,49 +1,106 @@
 ---
 const links = [
-    ['about', '/about/'],
     // ['projects', '/projects/'],
     // ['thoughts', '/blog/'],
     ['writings', '/writing/'],
     ['tags', '/tags/'],
+    ['about', '/about/'],
 ];
 
 ---
 <nav>
-    <a href="/"><h1>coopa</h1></a>
-    <div class="links">
+    <h1><a href="/">coopa</a></h1>
+    <ul>
         {links.map((link) => (
-            <a href={link[1]}>{link[0]}</a>
+            <li><a href={link[1]}>{link[0]}</a></li>
         ))}
+    </ul>
+    <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
     </div>
 </nav>
+<script>
+    import "../scripts/menu.js";
+</script>
 
 <style>
-    a {
-        text-decoration: none;
-    }
     nav {
-        height: 5rem;
-        /* position: fixed; */
-        top: 0;
+        max-width: 1300px;
+        min-height: 50px;
+        margin: auto;
         display: flex;
-        align-items: center;
-        padding: 0.2rem 2rem;
         justify-content: space-between;
+        align-items: center;
+        padding: 0 1.2rem;
+
+
+        /* top: 0; */
+        /* position: fixed; */
     }
-    h1 {
-        color: #000;
-        font-size: 2.5rem;
-        font-weight: 500;
-        /* letter-spacing: 0.15rem; */
+
+    /* hamburger nav */
+    nav ul {
         margin: 0;
-    }
-    .links {
-        display: flex;
+        padding: 0;
+        list-style: none;
+        display: none;
         align-items: center;
     }
-    .links a {
+
+    nav ul a {
         color: #000;
         cursor: pointer;
-        margin: 0 1rem;
+        margin: 0 1.4rem;
+    }
+
+    a {
+        text-decoration: none;
+        color: #000;
+    }
+
+    h1 {
+        color: #000;
+        font-size: 2rem;
+        font-weight: 500;
+        /* letter-spacing: 0.15rem; */
+        padding: 0;
+        margin: 0;
+        margin-bottom: 10px;
+    }
+
+    .hamburger {
+        cursor: pointer;
+    }
+
+    .hamburger span {
+        display: block;
+        width: 30px;
+        height: 2px;
+        margin-bottom: 7px;
+        background-color: black;
+    }
+
+    .expanded {
+        display: unset;
+    }
+
+    /* on screens that are 400px or more */
+    @media screen and (min-width: 650px) {
+
+
+    /* normal nav */
+        nav ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            display: flex;
+            align-items: center;
+        }
+
+        .hamburger {
+            display: none;
+        }
     }
 </style>

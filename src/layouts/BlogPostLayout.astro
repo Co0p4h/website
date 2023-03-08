@@ -1,29 +1,33 @@
 ---
 import { CollectionEntry } from "astro:content";
 import BaseLayout from "./BaseLayout.astro";
+import '../styles/content.css'
 
-// interface Props {
-//   frontmatter: CollectionEntry<'blog'>['data'];
-// }
 type Props = CollectionEntry<'blog'>['data'];
 
-const { title, author, pubDate, description, image } = Astro.props;
+const { title, author, pubDate, description, image, tags } = Astro.props;
 ---
 <BaseLayout pageTitle={title}>
-    <h1>{title}</h1>
-    <p>author: {author}</p>
-    <p>publish date: {pubDate.toLocaleDateString("en-uk")}</p>
-    <p>description: <em>{description}</em></p>
-    <img src={image?.src} width="300" alt={image?.alt} style="max-width: 100%; height: auto;"/>
-    <div>
-        <slot />
+    <div class="page-header">
+        <h1>{title}</h1>
+        <i>written by </i>{author} |
+        {tags.map((tag, index) => (
+            <a href={`/tags/${tag}`}>{tag}{index !== tags.length - 1 && ", "}</a>
+        ))}
+        <p>publish date: {pubDate.toLocaleDateString("en-uk")}</p>
+        <p>description: <em>{description}</em></p>
+        <img src={image?.src} width="300" alt={image?.alt} style="max-width: 100%; height: auto;"/>
     </div>
+    <article>
+        <slot />
+    </article>
 </BaseLayout>
 
-<!-- <style>
-    div { 
-        text-align: center;
-        color: red;
-    }
-</style> -->
-
+<style>
+    /* div { 
+        flex: 1;
+        margin: 0 auto;
+        padding: 0 2rem;
+        max-width: 32rem;
+    } */
+</style>

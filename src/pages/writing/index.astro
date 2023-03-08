@@ -1,23 +1,42 @@
 ---
 import { getCollection } from "astro:content";
+import BlogPostCard from "../../components/BlogPostCard.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 
-// don't need this anymore because we have getCollection now
-// const allPosts = await Astro.glob('../pages/posts/*.md');
 const all_posts = await getCollection('blog');
+
+// const tags = [...new Set(all_posts.map((post) => post.data.tags).flat())];
 
 const pageTitle = "writing";
 ---
 <BaseLayout pageTitle={pageTitle}>
     <h2>this si msy writ eing</h2>
-    <ul>
+    <p><i>"very cool quote..."</i></p>
+    <div>
         {all_posts.map(post => (
-            <li>
-                <a href={post.slug}>{post.data.title}</a>
-                {/* <img src={post.data.image?.src} alt={post.data.image?.alt} style="max-width: 100%; height: auto;">*/}
-            </li>
+            <BlogPostCard {...post}/>
+            <BlogPostCard {...post}/>
         ))}
-    </ul>
+    </div>
+
     <a href="1">more</a>
+
+    <!-- <p>browse by tag: </p>
+    <ul>
+    {tags.map((tag) => (
+        <li><a href={`/tags/${tag}`}>{tag}</a></li>
+    ))}
+    </ul> -->
 </BaseLayout>
 
+<style>
+    div {
+        /* display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 1rem;
+        row-gap: 1rem; */
+        display: flex;
+        flex-wrap: wrap;
+    }
+    
+</style>

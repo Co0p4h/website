@@ -1,0 +1,15 @@
+blockquote {
+    /* background: #504fbb; */
+    color: #5d5d5d;
+    border-left: 2px solid #5d5d5d;
+    margin: 2rem 0rem;
+    padding-left: 1.5rem;
+}
+
+blockquote p {
+    display: inline;
+}
+
+img {
+    max-width: 500px;
+}
